@@ -31,6 +31,37 @@ class UI {
   `;
   }
 
+  //Show Alert message
+  showAlert(message, className) {
+    //Clear any remaining alerts
+    this.clearAlert();
+    //Create a div
+    const div = document.createElement('div');
+    //Add classes
+    div.className = className;
+
+    //Add text to that div
+    div.appendChild(document.createTextNode(message));
+
+    //Select the search container
+    const container = document.querySelector('.searchContainer');
+
+    //Select the search box
+    const search = document.querySelector('.search');
+
+    //Insert alert the div before the search box
+    container.insertBefore(div, search);
+  }
+
+  clearAlert() {
+    const currentAlert = document.querySelector('.alert');
+
+    if (currentAlert) {
+      currentAlert.remove();
+    }
+  }
+
+  //Clear Profile
   clearProfile() {
     this.profile.innerHTML = '';
   }
