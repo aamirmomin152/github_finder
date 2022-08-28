@@ -51,6 +51,12 @@ class UI {
 
     //Insert alert the div before the search box
     container.insertBefore(div, search);
+
+    //Time out after 3 seconds
+
+    setTimeout(() => {
+      this.clearAlert()
+    }, 3000)
   }
 
   clearAlert() {
